@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *loginTexbox;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTexbox;
 
 
+- (IBAction)loginButtonClick:(id)sender;
 @end
 

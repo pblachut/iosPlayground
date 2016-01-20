@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bod-pm-rCl">
+                                <rect key="frame" x="20" y="127" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqu-CU-VB3">
+                                <rect key="frame" x="20" y="224" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="niF-vd-0dV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fns-BD-Gvj">
+                                <rect key="frame" x="20" y="281" width="560" height="54"/>
+                                <color key="backgroundColor" red="0.31478983427769436" green="1" blue="0.97544715557399408" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRv-u3-8md"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2y-J9-Fl7">
+                                <rect key="frame" x="20" y="167" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="yYE-ql-S5J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jqu-CU-VB3" firstAttribute="trailing" secondItem="H2y-J9-Fl7" secondAttribute="trailing" id="701-ZE-dEC"/>
+                            <constraint firstItem="Bod-pm-rCl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="107" id="73K-GD-yeV"/>
+                            <constraint firstItem="Bod-pm-rCl" firstAttribute="leading" secondItem="H2y-J9-Fl7" secondAttribute="leading" id="GbM-s2-5SX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fns-BD-Gvj" secondAttribute="bottom" constant="265" id="J0b-i7-tH6"/>
+                            <constraint firstItem="fns-BD-Gvj" firstAttribute="trailing" secondItem="jqu-CU-VB3" secondAttribute="trailing" id="JzZ-hs-q0u"/>
+                            <constraint firstItem="H2y-J9-Fl7" firstAttribute="leading" secondItem="jqu-CU-VB3" secondAttribute="leading" id="KRH-ag-lIB"/>
+                            <constraint firstItem="jqu-CU-VB3" firstAttribute="top" secondItem="H2y-J9-Fl7" secondAttribute="bottom" constant="27" id="SVq-P6-c77"/>
+                            <constraint firstItem="jqu-CU-VB3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZW7-Uc-WxB"/>
+                            <constraint firstItem="jqu-CU-VB3" firstAttribute="leading" secondItem="fns-BD-Gvj" secondAttribute="leading" id="dWs-g3-FU4"/>
+                            <constraint firstItem="H2y-J9-Fl7" firstAttribute="top" secondItem="Bod-pm-rCl" secondAttribute="bottom" constant="19" id="k7o-Ns-wz7"/>
+                            <constraint firstItem="fns-BD-Gvj" firstAttribute="top" secondItem="jqu-CU-VB3" secondAttribute="bottom" constant="27" id="n2s-dM-4a8"/>
+                            <constraint firstItem="fns-BD-Gvj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="u0G-Z4-vG9"/>
+                            <constraint firstItem="Bod-pm-rCl" firstAttribute="trailing" secondItem="H2y-J9-Fl7" secondAttribute="trailing" id="v2r-Xy-TM6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTexbox" destination="H2y-J9-Fl7" id="fyE-1V-Z1Z"/>
+                        <outlet property="passwordTexbox" destination="jqu-CU-VB3" id="cXx-uE-wGR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="338" y="490"/>
         </scene>
     </scenes>
 </document>
