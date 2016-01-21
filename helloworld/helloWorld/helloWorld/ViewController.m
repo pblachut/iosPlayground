@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <NSURLSessionDataDelegate>
 
 @end
 
@@ -24,6 +24,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void) URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
+    NSError *errorJson=nil;
+    NSDictionary* responseDict =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&errorJson];
+    
+    NSString *accessToken = [responseDict objectForKey:@"access_token"];
+    
+    if ([accessToken length] > 0){
+        NSString *message = [NSString stringWithFormat:@"Received access key: %@", accessToken];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self showAllertWith:message];
+        });
+        
+        
+    }
+    else{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self showAllertWith:@"Access token not found in response"];
+        });
+        
+    }
+
+}
+
+
 - (IBAction)loginButtonClick:(id)sender {
     
     NSString *login = [self.loginTexbox.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
@@ -38,10 +64,29 @@
         [self showAllertWith:@"password cannot be empty"];
     }
     
-    
+    [self authenticateWith:login and:password];
+}
 
+- (void) authenticateWith: (NSString*) login and:(NSString*) password
+{
+   
+    NSString* urlAsString = @"http://nprdiary.azurewebsites.net/api/token";
+     NSURL* url = [NSURL URLWithString:urlAsString];
+     
+     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+     [urlRequest setTimeoutInterval:30.0f];
+     [urlRequest setHTTPMethod:@"POST"];
+     
+    NSString *body = [NSString stringWithFormat: @"grant_type=password&username=%@&password=%@",login, password];
+     [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+     [urlRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
     
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:urlRequest];
+    
+    [postDataTask resume];
     
 }
 
