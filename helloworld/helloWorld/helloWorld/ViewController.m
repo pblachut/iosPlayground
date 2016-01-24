@@ -32,10 +32,10 @@
     NSString *accessToken = [responseDict objectForKey:@"access_token"];
     
     if ([accessToken length] > 0){
-        NSString *message = [NSString stringWithFormat:@"Received access key: %@", accessToken];
+        //NSString *message = [NSString stringWithFormat:@"Received access key: %@", accessToken];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
-            [self showAllertWith:message];
+            [self navigateToSecondView];
         });
         
         
@@ -48,6 +48,11 @@
     }
 
 }
+
+-(void) navigateToSecondView{
+    [self performSegueWithIdentifier:@"navigateToSecondView" sender:self];
+}
+
 
 
 - (IBAction)loginButtonClick:(id)sender {

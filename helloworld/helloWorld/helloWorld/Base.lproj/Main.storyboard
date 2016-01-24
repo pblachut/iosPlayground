@@ -48,32 +48,81 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="11e-cm-mOJ">
+                                <rect key="frame" x="290" y="374" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jqu-CU-VB3" firstAttribute="trailing" secondItem="H2y-J9-Fl7" secondAttribute="trailing" id="701-ZE-dEC"/>
                             <constraint firstItem="Bod-pm-rCl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="107" id="73K-GD-yeV"/>
+                            <constraint firstItem="fns-BD-Gvj" firstAttribute="centerX" secondItem="11e-cm-mOJ" secondAttribute="centerX" id="Dn6-aX-9t7"/>
                             <constraint firstItem="Bod-pm-rCl" firstAttribute="leading" secondItem="H2y-J9-Fl7" secondAttribute="leading" id="GbM-s2-5SX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fns-BD-Gvj" secondAttribute="bottom" constant="265" id="J0b-i7-tH6"/>
                             <constraint firstItem="fns-BD-Gvj" firstAttribute="trailing" secondItem="jqu-CU-VB3" secondAttribute="trailing" id="JzZ-hs-q0u"/>
                             <constraint firstItem="H2y-J9-Fl7" firstAttribute="leading" secondItem="jqu-CU-VB3" secondAttribute="leading" id="KRH-ag-lIB"/>
+                            <constraint firstItem="Bod-pm-rCl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="PXy-1m-8NR"/>
                             <constraint firstItem="jqu-CU-VB3" firstAttribute="top" secondItem="H2y-J9-Fl7" secondAttribute="bottom" constant="27" id="SVq-P6-c77"/>
-                            <constraint firstItem="jqu-CU-VB3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZW7-Uc-WxB"/>
                             <constraint firstItem="jqu-CU-VB3" firstAttribute="leading" secondItem="fns-BD-Gvj" secondAttribute="leading" id="dWs-g3-FU4"/>
+                            <constraint firstItem="11e-cm-mOJ" firstAttribute="top" secondItem="fns-BD-Gvj" secondAttribute="bottom" constant="39" id="g2X-oR-fLM"/>
                             <constraint firstItem="H2y-J9-Fl7" firstAttribute="top" secondItem="Bod-pm-rCl" secondAttribute="bottom" constant="19" id="k7o-Ns-wz7"/>
                             <constraint firstItem="fns-BD-Gvj" firstAttribute="top" secondItem="jqu-CU-VB3" secondAttribute="bottom" constant="27" id="n2s-dM-4a8"/>
-                            <constraint firstItem="fns-BD-Gvj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="u0G-Z4-vG9"/>
+                            <constraint firstItem="jqu-CU-VB3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oxX-Ab-kGA"/>
                             <constraint firstItem="Bod-pm-rCl" firstAttribute="trailing" secondItem="H2y-J9-Fl7" secondAttribute="trailing" id="v2r-Xy-TM6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginTexbox" destination="H2y-J9-Fl7" id="fyE-1V-Z1Z"/>
                         <outlet property="passwordTexbox" destination="jqu-CU-VB3" id="cXx-uE-wGR"/>
+                        <segue destination="ypr-Yt-PcJ" kind="show" identifier="navigateToSecondView" id="rdJ-x6-pxn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="338" y="490"/>
+            <point key="canvasLocation" x="-17" y="396"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Qbe-u6-ZdC">
+            <objects>
+                <viewController id="ypr-Yt-PcJ" customClass="SecondViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="16t-OQ-9ph"/>
+                        <viewControllerLayoutGuide type="bottom" id="T4d-Xm-RNa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FZG-b6-LSE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are logged in!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNX-C0-iuh">
+                                <rect key="frame" x="20" y="159" width="560" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRF-UB-ItH">
+                                <rect key="frame" x="20" y="324" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.64892902258820317" green="1" blue="0.64512162664848272" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="23G-xW-bp3"/>
+                                </constraints>
+                                <state key="normal" title="Log out"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tNX-C0-iuh" firstAttribute="top" secondItem="16t-OQ-9ph" secondAttribute="bottom" constant="139" id="GFY-m2-whI"/>
+                            <constraint firstItem="jRF-UB-ItH" firstAttribute="trailing" secondItem="FZG-b6-LSE" secondAttribute="trailingMargin" id="LW5-Wf-4TN"/>
+                            <constraint firstItem="jRF-UB-ItH" firstAttribute="leading" secondItem="FZG-b6-LSE" secondAttribute="leadingMargin" id="NZF-xp-dLh"/>
+                            <constraint firstItem="jRF-UB-ItH" firstAttribute="top" secondItem="tNX-C0-iuh" secondAttribute="bottom" constant="65" id="eDB-r0-GOG"/>
+                            <constraint firstItem="T4d-Xm-RNa" firstAttribute="top" secondItem="jRF-UB-ItH" secondAttribute="bottom" constant="246" id="mCe-sE-brG"/>
+                            <constraint firstItem="tNX-C0-iuh" firstAttribute="leading" secondItem="jRF-UB-ItH" secondAttribute="leading" id="rFt-cn-2AT"/>
+                            <constraint firstItem="tNX-C0-iuh" firstAttribute="trailing" secondItem="jRF-UB-ItH" secondAttribute="trailing" id="xZk-i6-Mcm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOB-Mr-fsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="396"/>
         </scene>
     </scenes>
 </document>
