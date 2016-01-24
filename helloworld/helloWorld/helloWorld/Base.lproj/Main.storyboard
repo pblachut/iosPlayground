@@ -107,6 +107,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Pi6-sd-avc"/>
                                 </constraints>
                                 <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logout:" destination="ypr-Yt-PcJ" eventType="touchUpInside" id="u3O-4X-Ozh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80336353133829463" green="0.79125141479304228" blue="1" alpha="1" colorSpace="calibratedRGB"/>
