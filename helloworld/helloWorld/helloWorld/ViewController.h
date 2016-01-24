@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *loginTexbox;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTexbox;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 
 
 - (IBAction)loginButtonClick:(id)sender;

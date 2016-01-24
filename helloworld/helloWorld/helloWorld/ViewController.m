@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,6 +28,13 @@
 
 
 - (void) URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
+    
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self.loader stopAnimating];
+    });
+    
+    
+    
     NSError *errorJson=nil;
     NSDictionary* responseDict =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&errorJson];
     
@@ -74,7 +83,7 @@
 
 - (void) authenticateWith: (NSString*) login and:(NSString*) password
 {
-   
+    [self.loader startAnimating];
     NSString* urlAsString = @"http://nprdiary.azurewebsites.net/api/token";
      NSURL* url = [NSURL URLWithString:urlAsString];
      

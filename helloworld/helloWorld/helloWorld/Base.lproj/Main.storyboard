@@ -21,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bod-pm-rCl">
                                 <rect key="frame" x="20" y="127" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqu-CU-VB3">
@@ -48,11 +48,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="11e-cm-mOJ">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="11e-cm-mOJ">
                                 <rect key="frame" x="290" y="374" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.93539396116374052" blue="0.92533320688683973" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jqu-CU-VB3" firstAttribute="trailing" secondItem="H2y-J9-Fl7" secondAttribute="trailing" id="701-ZE-dEC"/>
                             <constraint firstItem="Bod-pm-rCl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="107" id="73K-GD-yeV"/>
@@ -72,9 +72,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loader" destination="11e-cm-mOJ" id="2de-wM-8nU"/>
                         <outlet property="loginTexbox" destination="H2y-J9-Fl7" id="fyE-1V-Z1Z"/>
                         <outlet property="passwordTexbox" destination="jqu-CU-VB3" id="cXx-uE-wGR"/>
-                        <segue destination="ypr-Yt-PcJ" kind="show" identifier="navigateToSecondView" id="rdJ-x6-pxn"/>
+                        <segue destination="ypr-Yt-PcJ" kind="show" identifier="navigateToSecondView" id="DmO-64-7JP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -96,27 +97,27 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are logged in!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNX-C0-iuh">
                                 <rect key="frame" x="20" y="159" width="560" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRF-UB-ItH">
                                 <rect key="frame" x="20" y="324" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.64892902258820317" green="1" blue="0.64512162664848272" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="23G-xW-bp3"/>
+                                    <constraint firstAttribute="height" constant="30" id="Pi6-sd-avc"/>
                                 </constraints>
                                 <state key="normal" title="Log out"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80336353133829463" green="0.79125141479304228" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="tNX-C0-iuh" firstAttribute="top" secondItem="16t-OQ-9ph" secondAttribute="bottom" constant="139" id="GFY-m2-whI"/>
-                            <constraint firstItem="jRF-UB-ItH" firstAttribute="trailing" secondItem="FZG-b6-LSE" secondAttribute="trailingMargin" id="LW5-Wf-4TN"/>
-                            <constraint firstItem="jRF-UB-ItH" firstAttribute="leading" secondItem="FZG-b6-LSE" secondAttribute="leadingMargin" id="NZF-xp-dLh"/>
-                            <constraint firstItem="jRF-UB-ItH" firstAttribute="top" secondItem="tNX-C0-iuh" secondAttribute="bottom" constant="65" id="eDB-r0-GOG"/>
-                            <constraint firstItem="T4d-Xm-RNa" firstAttribute="top" secondItem="jRF-UB-ItH" secondAttribute="bottom" constant="246" id="mCe-sE-brG"/>
-                            <constraint firstItem="tNX-C0-iuh" firstAttribute="leading" secondItem="jRF-UB-ItH" secondAttribute="leading" id="rFt-cn-2AT"/>
-                            <constraint firstItem="tNX-C0-iuh" firstAttribute="trailing" secondItem="jRF-UB-ItH" secondAttribute="trailing" id="xZk-i6-Mcm"/>
+                            <constraint firstItem="jRF-UB-ItH" firstAttribute="top" secondItem="tNX-C0-iuh" secondAttribute="bottom" constant="65" id="Ds1-MR-eLf"/>
+                            <constraint firstItem="tNX-C0-iuh" firstAttribute="leading" secondItem="jRF-UB-ItH" secondAttribute="leading" id="LiS-tq-scZ"/>
+                            <constraint firstItem="tNX-C0-iuh" firstAttribute="top" secondItem="16t-OQ-9ph" secondAttribute="bottom" constant="139" id="ZdM-fu-QVg"/>
+                            <constraint firstItem="tNX-C0-iuh" firstAttribute="trailing" secondItem="jRF-UB-ItH" secondAttribute="trailing" id="bLv-t9-yzv"/>
+                            <constraint firstItem="T4d-Xm-RNa" firstAttribute="top" secondItem="jRF-UB-ItH" secondAttribute="bottom" constant="246" id="imq-Va-lmX"/>
+                            <constraint firstItem="jRF-UB-ItH" firstAttribute="trailing" secondItem="FZG-b6-LSE" secondAttribute="trailingMargin" id="pbZ-o3-BiW"/>
+                            <constraint firstItem="jRF-UB-ItH" firstAttribute="leading" secondItem="FZG-b6-LSE" secondAttribute="leadingMargin" id="ydQ-RM-IJJ"/>
                         </constraints>
                     </view>
                 </viewController>
